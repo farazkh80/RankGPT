@@ -5,7 +5,7 @@ with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
 setup(
-    name='rank_gpt',
+    name='rankgpt',
     version='0.1.0',
     description='A Python package for RankGPT',
     url='https://github.com/farazkh80/RankGPT',
