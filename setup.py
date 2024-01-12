@@ -5,12 +5,12 @@ with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
 setup(
-    name='rank_gpy',
+    name='rank_gpt',
     version='0.1.0',
-    description='A Python package for ranking using Gaussian processes.',
-    url='https://github.com/yourusername/rank_gpy',
-    author='Your Name',
-    author_email='your.email@example.com',
+    description='A Python package for RankGPT',
+    url='https://github.com/farazkh80/RankGPT',
+    author='Faraz Khoubsirat',
+    author_email='fkhoubsi@uwaterloo.ca',
     license='MIT',
     packages=find_packages(),
     install_requires=requirements,  # Include the dependencies from requirements.txt
