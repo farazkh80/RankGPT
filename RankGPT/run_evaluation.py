@@ -57,7 +57,7 @@ THE_TOPICS = {
 
 }
 
-from RankGPT.rankgpt.rank_gpt import run_retriever, sliding_windows, write_eval_file
+from RankGPT.RankGPT.rank_gpt import run_retriever, sliding_windows, write_eval_file
 from pyserini.search import LuceneSearcher, get_topics, get_qrels
 from tqdm import tqdm
 import tempfile
@@ -91,7 +91,7 @@ for data in ['dl19', 'dl20', 'covid', 'nfc', 'touche', 'dbpedia', 'scifact', 'si
         new_results.append(new_item)
 
     # Evaluate nDCG@10
-    from RankGPT.rankgpt.trec_eval import EvalFunction
+    from RankGPT.RankGPT.trec_eval import EvalFunction
 
     # Create an empty text file to write results, and pass the name to eval
     output_file = tempfile.NamedTemporaryFile(delete=False).name
@@ -126,7 +126,7 @@ for data in ['mrtydi-ar', 'mrtydi-bn', 'mrtydi-fi', 'mrtydi-id', 'mrtydi-ja', 'm
         new_results.append(new_item)
 
     # Evaluate nDCG@10
-    from RankGPT.rankgpt.trec_eval import EvalFunction
+    from RankGPT.RankGPT.trec_eval import EvalFunction
 
     temp_file = tempfile.NamedTemporaryFile(delete=False).name
     write_eval_file(new_results, temp_file)
