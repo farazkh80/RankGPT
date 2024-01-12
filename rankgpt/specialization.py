@@ -4,7 +4,7 @@ from accelerate import Accelerator
 from transformers import AutoModelForSequenceClassification, AutoConfig, AutoTokenizer, AdamW
 import torch
 from tqdm import tqdm
-from rank_loss import RankLoss
+from RankGPT.rankgpt.rank_loss import RankLoss
 import numpy as np
 import os
 import argparse
@@ -163,8 +163,8 @@ def train(args):
 
 def eval_on_benchmark(args, model=None, tokenizer=None):
     os.environ['TOKENIZERS_PARALLELISM'] = 'false'
-    from rank_gpt import run_retriever, receive_permutation, write_eval_file
-    from trec_eval import EvalFunction
+    from RankGPT.rankgpt.rank_gpt import run_retriever, receive_permutation, write_eval_file
+    from RankGPT.rankgpt.trec_eval import EvalFunction
     from pyserini.search import LuceneSearcher, get_topics, get_qrels
 
     THE_INDEX = {
